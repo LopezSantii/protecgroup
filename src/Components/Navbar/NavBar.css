@@ -1,0 +1,11 @@
+#nav li {
+  margin: 0px 10px;
+}
+
+#nav li a {
+  color: grey;
+}
+
+nav section a img {
+  width: 70px;
+}
