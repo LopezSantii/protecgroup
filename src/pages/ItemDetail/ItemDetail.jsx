@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import Button from "../../Components/Button/Button";
 import style from "./ItemDetail.module.css";
+import { useCart } from "../../context/CartContext";
 
 export default function ItemDetail() {
+  const { addToCart } = useCart();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -31,7 +33,7 @@ export default function ItemDetail() {
         <section className="m-5 row">
           <div
             id="carouselExample"
-            className="col-5 d-block carousel slide carousel-dark"
+            className="col-xxl-5 col-xl-5 col-12 h-100 d-block carousel slide carousel-dark"
           >
             <div className="carousel-indicators">
               {Object.values(product.img).map((item, index) => (
@@ -85,11 +87,13 @@ export default function ItemDetail() {
               <span className="visually-hidden">Next</span>
             </button>
           </div>
-          <section className={`col-6 ${style.description_item}`}>
+          <section
+            className={`col-xxl-6 col-xl-5 col-12 ${style.description_item}`}
+          >
             <h1>{product.title}</h1>
             <p className="m-3">{product.description}</p>
-            <h3>Caracteristicas</h3>
-            <ul>
+            <h3 className="d-none d-lg-block">Caracteristicas</h3>
+            <ul className="d-none d-lg-block">
               {product.caracteristicas.map((item, index) => {
                 return (
                   <li className="mb-1" key={index}>
@@ -98,7 +102,45 @@ export default function ItemDetail() {
                 );
               })}
             </ul>
-            <Button clase="m-3" content="Agregar al carrito" />
+            <div
+              className="d-block d-lg-none accordion accordion-flush"
+              id="accordionFlushExample"
+            >
+              <div className="accordion-item">
+                <h3 className="accordion-header">
+                  <button
+                    className="p-auto accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Caracteristicas
+                  </button>
+                </h3>
+                <div
+                  id="flush-collapseOne"
+                  className="accordion-collapse collapse show"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <ul className="accordion-body">
+                    {product.caracteristicas.map((item, index) => {
+                      return (
+                        <li className="mb-1" key={index}>
+                          {item}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <Button
+              clase="m-3"
+              funcion={() => addToCart(product, 1)}
+              content="Agregar al carrito"
+            />
           </section>
         </section>
       </main>

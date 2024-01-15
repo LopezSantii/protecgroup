@@ -1,0 +1,29 @@
+.itemCarrito {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0px;
+}
+
+.itemCarrito img {
+    width: 40%;
+}
+
+.itemCarrito section {
+    margin-left: 15px;
+    width: 100%;
+}
+
+.itemCarrito section h3 {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.itemCarrito section div {
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+}
+
+.itemCarrito section div p {
+    margin-right: 20px;
+}

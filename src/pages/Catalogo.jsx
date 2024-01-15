@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import ItemCard from "../Components/ItemCard/ItemCard";
+import { useCart } from "../context/CartContext";
 
 export default function Catalogo() {
   const [products, setProducts] = useState([]);
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     console.log("ID from params:", id);
@@ -36,7 +38,12 @@ export default function Catalogo() {
       <section className="container row mx-auto">
         {console.log(products)}
         {products.map((product) => (
-          <ItemCard className="col-3" product={product} key={product.id} />
+          <ItemCard
+            className="col-3"
+            addToCart={addToCart}
+            product={product}
+            key={product.id}
+          />
         ))}
       </section>
     </main>
