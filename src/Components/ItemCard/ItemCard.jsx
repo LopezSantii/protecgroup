@@ -20,7 +20,7 @@ export default function ItemCard({ product, addToCart }) {
         <p className="card-title">{product.title}</p>
       </div>
       <Button
-        clase="w-100 mt-2"
+        clase={`w-100 mt-2`}
         funcion={() => addToCart(product, 1)}
         content={"Agregar al carrito"}
       />

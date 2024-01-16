@@ -5,22 +5,25 @@ import ItemDetail from "./pages/ItemDetail/ItemDetail";
 import { ModalProvider } from "./context/ModalContex";
 import { CartProvider } from "./context/CartContext";
 import CartDetail from "./Components/CartDetail/CartDetail";
+import Landing from "./pages/Landing/Landing";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <main>
+    <>
       <ModalProvider>
         <CartProvider>
           <Navbar />
           <CartDetail />
           <Routes>
-            <Route path="/" element={<Catalogo />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/category/:id" element={<Catalogo />} />
             <Route path="/item/:id" element={<ItemDetail />} />
           </Routes>
+          <Footer />
         </CartProvider>
       </ModalProvider>
-    </main>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -36,34 +36,34 @@ export default function Navbar() {
           <div className="offcanvas-body">
             <ul id="nav" className="navbar-nav ms-auto mx-auto  mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/category/Todos">
-                  Todos
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/category/craneana">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active nav-link" : "nav-link"
+                  }
+                  to="/category/craneana"
+                >
                   Craneana
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/category/auditiva">
+                <NavLink className="nav-link" to="/category/auditiva">
                   Auditiva
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/category/facial">
+                <NavLink className="nav-link" to="/category/facial">
                   Facial
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/category/ocular">
+                <NavLink className="nav-link" to="/category/ocular">
                   Ocular
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/category/respiratoria">
+                <NavLink className="nav-link" to="/category/respiratoria">
                   Respiratoria
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <CartWidget />

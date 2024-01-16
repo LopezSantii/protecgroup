@@ -9,6 +9,7 @@ export default function ItemDetail() {
   const { addToCart } = useCart();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const db = getFirestore();
@@ -23,14 +24,50 @@ export default function ItemDetail() {
         setProduct(itemsFromSnapshot.find((product) => product.id === id));
       })
       .finally(() => {
-        // setLoading(false);
+        setLoading(false);
       });
   }, []);
 
   return (
-    product && (
-      <main className="mb-5 container">
-        <section className="m-5 row">
+    <section className="mb-5 container">
+      {loading ? (
+        // Mostrar placeholders si loading es true
+        <div className="row placeholder-glow">
+          {/* Placeholder para carrusel */}
+          <div
+            className="col-5 mb-3 placeholder bg-secondary"
+            style={{ height: "500px", width: "520px" }}
+          ></div>
+          <div
+            className={`col-xxl-6 col-xl-5 col-12 ${style.description_item}`}
+          >
+            {/* Placeholders para título, descripción y características */}
+            <div
+              className="mb-3 placeholder bg-secondary"
+              style={{ height: "40px", width: "100%" }}
+            ></div>
+            <div
+              className="mb-3 placeholder bg-secondary"
+              style={{ height: "80px", width: "100%" }}
+            ></div>
+            <div
+              className="mb-3 placeholder bg-secondary"
+              style={{ height: "20px", width: "20%" }}
+            ></div>
+            <div
+              className="mb-3 placeholder bg-secondary"
+              style={{ height: "300px", width: "70%" }}
+            ></div>
+            {/* Placeholder para botón */}
+            <div
+              className="mb-3 placeholder bg-secondary"
+              style={{ height: "40px", width: "50%" }}
+            ></div>
+          </div>
+        </div>
+      ) : (
+        // Mostrar contenido real si loading es false
+        <div className="row">
           <div
             id="carouselExample"
             className="col-xxl-5 col-xl-5 col-12 h-100 d-block carousel slide carousel-dark"
@@ -94,47 +131,26 @@ export default function ItemDetail() {
             <p className="m-3">{product.description}</p>
             <h3 className="d-none d-lg-block">Caracteristicas</h3>
             <ul className="d-none d-lg-block">
-              {product.caracteristicas.map((item, index) => {
-                return (
-                  <li className="mb-1" key={index}>
-                    {item}
-                  </li>
-                );
-              })}
+              {product.caracteristicas.map((item, index) => (
+                <li className="mb-1" key={index}>
+                  {item}
+                </li>
+              ))}
             </ul>
-            <div
-              className="d-block d-lg-none accordion accordion-flush"
-              id="accordionFlushExample"
-            >
-              <div className="accordion-item">
-                <h3 className="accordion-header">
-                  <button
-                    className="p-auto accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="true"
-                    aria-controls="flush-collapseOne"
-                  >
-                    Caracteristicas
-                  </button>
-                </h3>
-                <div
-                  id="flush-collapseOne"
-                  className="accordion-collapse collapse show"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <ul className="accordion-body">
-                    {product.caracteristicas.map((item, index) => {
-                      return (
-                        <li className="mb-1" key={index}>
-                          {item}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
+            {/* Placeholder para características en dispositivos pequeños */}
+            <div className="d-block d-lg-none">
+              <div
+                className="mb-1 bg-light"
+                style={{ height: "20px", width: "80%" }}
+              ></div>
+              <div
+                className="mb-1 bg-light"
+                style={{ height: "20px", width: "60%" }}
+              ></div>
+              <div
+                className="mb-1 bg-light"
+                style={{ height: "20px", width: "70%" }}
+              ></div>
             </div>
             <Button
               clase="m-3"
@@ -142,8 +158,8 @@ export default function ItemDetail() {
               content="Agregar al carrito"
             />
           </section>
-        </section>
-      </main>
-    )
+        </div>
+      )}
+    </section>
   );
 }

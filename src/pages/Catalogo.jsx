@@ -8,6 +8,7 @@ export default function Catalogo() {
   const [products, setProducts] = useState([]);
   const { id } = useParams();
   const { addToCart } = useCart();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     console.log("ID from params:", id);
@@ -28,24 +29,49 @@ export default function Catalogo() {
         );
       })
       .finally(() => {
-        // setLoading(false);
+        setLoading(false);
       });
   }, [id]);
 
   return (
-    <main>
+    <>
       <h1 className="mt-5 text-center py-4">ÚLTIMOS LANZAMIENTOS</h1>
       <section className="container row mx-auto">
-        {console.log(products)}
-        {products.map((product) => (
-          <ItemCard
-            className="col-3"
-            addToCart={addToCart}
-            product={product}
-            key={product.id}
-          />
-        ))}
+        {loading ? (
+          // Mostrar placeholders si loading es true
+          <>
+            {[1, 2, 3, 4, 5, 6].map((placeholder) => (
+              <div className="col-4 placeholder-glow" key={placeholder}>
+                {/* Placeholder para ItemCard */}
+                <div
+                  className="mb-3 placeholder bg-secondary"
+                  style={{ height: "400px", width: "400px" }}
+                ></div>
+                <div
+                  className="col-3 mb-3 placeholder bg-secondary"
+                  style={{ height: "20px", width: "300px" }}
+                ></div>
+                <div
+                  className="col-3 mb-3 placeholder bg-secondary"
+                  style={{ height: "30px", width: "400px" }}
+                ></div>
+              </div>
+            ))}
+          </>
+        ) : (
+          // Mostrar contenido real si loading es false
+          <>
+            {products.map((product) => (
+              <ItemCard
+                className="col-3"
+                addToCart={addToCart}
+                product={product}
+                key={product.id}
+              />
+            ))}
+          </>
+        )}
       </section>
-    </main>
+    </>
   );
 }

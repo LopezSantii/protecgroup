@@ -1,0 +1,43 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30vh;
+  margin-top: 200px;
+  background-color: #1c51e4;
+}
+
+footer p {
+  margin: 25px;
+  color: white;
+}
+
+footer section {
+  margin: 0px 25px;
+}
+
+footer section a {
+  text-decoration: none;
+  margin: 10px;
+}
+
+footer section figure {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  color: white;
+}
+
+footer section figure img {
+  width: 80px;
+}
+
+footer section figure figcaption {
+  margin-left: 20px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+footer section a svg {
+  color: white;
+}
