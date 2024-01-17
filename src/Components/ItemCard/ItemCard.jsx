@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 export default function ItemCard({ product, addToCart }) {
   return (
-    <div className="col-lg-4 col-md-6 mt-5">
+    <div className="itemCard">
       <Link to={`/item/${product.id}`}>
         <img
           src={product.img.imgCard}

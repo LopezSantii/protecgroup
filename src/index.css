@@ -3,3 +3,223 @@
   margin: 0px;
   font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
+
+main {
+  background-color: #eaebf3;
+}
+
+.title_catalogo {
+  font-size: 4em;
+}
+
+.input {
+  width: 10vw;
+  height: 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.input input {
+  width: 60px;
+}
+
+.input button {
+  width: 100px;
+  background-color: #1c51e4;
+  color: white;
+  border-style: none;
+  border-radius: 3px;
+}
+
+.input button:hover {
+  background-color: #1c51e4c2;
+}
+
+.section_marcas {
+  box-shadow: 0 10px 7px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin: 10vh;
+  height: 55vh;
+  width: 70vw;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section_marcas section {
+  margin-top: 10vh;
+}
+
+.section_marcas h2 {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.section_marcas section img {
+  width: 100px;
+}
+
+.auditiva {
+  box-shadow: 0 10px 7px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+  background-attachment: fixed;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.678) 0%,
+      rgba(255, 255, 255, 0.137) 100%
+    ),
+    url(/img/auditiva_banner.jpg) center/cover no-repeat;
+}
+
+.auditiva:hover h3 {
+  transform: scale(1.3);
+}
+
+.auditiva h3 {
+  font-size: 2.5em;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.respiratoria {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+  background-attachment: fixed;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.678) 0%,
+      rgba(255, 255, 255, 0.137) 100%
+    ),
+    url(/img/banner_respiratoria.webp) center/cover no-repeat;
+}
+
+.respiratoria:hover h3 {
+  transform: scale(1.3);
+}
+
+.respiratoria h3 {
+  font-size: 2.5em;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.facial {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  width: 100%;
+  height: 45vh;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+  background-attachment: fixed;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.678) 0%,
+      rgba(255, 255, 255, 0.137) 100%
+    ),
+    url(/img/facial_banner.jpg) center/cover no-repeat;
+}
+
+.facial:hover h3 {
+  transform: scale(1.3);
+}
+
+.facial h3 {
+  font-size: 2.5em;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.envios {
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  height: 45vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+  background-attachment: fixed;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.678) 0%,
+      rgba(255, 255, 255, 0.137) 100%
+    ),
+    url(/img/envios_banner.jpg) center/cover no-repeat;
+}
+
+.envios h3 {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.itemDetail {
+  box-shadow: 0 10px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 15vh 5vw;
+  background-color: #f6f6f6;
+}
+
+.itemCard {
+  padding: 2vh;
+  border-radius: 5px;
+  box-shadow: 0 10px 9px rgba(0, 0, 0, 0.1);
+  background-color: #f6f6f6;
+}
+
+@media (max-width: 1200px) {
+  .envios h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+
+  .banner section h1 {
+    font-size: 2em;
+  }
+
+  .section_marcas section {
+    margin-top: 5vh;
+  }
+
+  .section_marcas h2 {
+    font-size: 2em;
+  }
+
+  .facial h3 {
+    font-size: 1.5em;
+  }
+
+  .respiratoria h3 {
+    font-size: 1.5em;
+  }
+
+  .auditiva {
+    height: 30vh;
+  }
+
+  .auditiva h3 {
+    font-size: 1.5em;
+  }
+}

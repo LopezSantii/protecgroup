@@ -1,4 +1,5 @@
 .banner {
+  box-shadow: 0 10px 7px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -39,4 +40,15 @@
 .buttonLanding:hover {
   color: white;
   background-color: #1b76ff;
+}
+
+@media (max-width: 1200px) {
+  .banner section {
+    width: 70vw;
+  }
+
+  .banner section h1 {
+    width: 100%;
+    font-size: 2em;
+  }
 }

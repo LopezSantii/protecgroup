@@ -9,11 +9,31 @@ export default function Catalogo() {
   const { id } = useParams();
   const { addToCart } = useCart();
   const [loading, setLoading] = useState(true);
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     console.log("ID from params:", id);
     const db = getFirestore();
     const itemCollection = collection(db, "items");
+
+    if (id === "Todos") {
+      setTitle("Todos nuestros productos");
+    }
+    if (id === "craneana") {
+      setTitle("Proteccion Craneana");
+    }
+    if (id === "auditiva") {
+      setTitle("Proteccion Auditiva");
+    }
+    if (id === "facial") {
+      setTitle("Proteccion Facial");
+    }
+    if (id === "ocular") {
+      setTitle("Proteccion Ocular");
+    }
+    if (id === "respiratoria") {
+      setTitle("Proteccion Respiratoria");
+    }
 
     getDocs(itemCollection)
       .then((snapshot) => {
@@ -34,9 +54,9 @@ export default function Catalogo() {
   }, [id]);
 
   return (
-    <>
-      <h1 className="mt-5 text-center py-4">ÚLTIMOS LANZAMIENTOS</h1>
-      <section className="container row mx-auto">
+    <section style={{ marginBottom: "10vh" }}>
+      <h1 className="mt-5 text-center py-4">{title}</h1>
+      <section className="container">
         {loading ? (
           // Mostrar placeholders si loading es true
           <>
@@ -60,18 +80,15 @@ export default function Catalogo() {
           </>
         ) : (
           // Mostrar contenido real si loading es false
-          <>
+          <section className="row">
             {products.map((product) => (
-              <ItemCard
-                className="col-3"
-                addToCart={addToCart}
-                product={product}
-                key={product.id}
-              />
+              <div key={product.id} className=" my-2 col-lg-4 col-md-6">
+                <ItemCard addToCart={addToCart} product={product} />
+              </div>
             ))}
-          </>
+          </section>
         )}
       </section>
-    </>
+    </section>
   );
 }

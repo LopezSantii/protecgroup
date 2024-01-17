@@ -10,6 +10,18 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const { closeModal } = useModal();
 
+  const updateQuantity = (productId, newQuantity) => {
+    // Actualizar la cantidad del producto en el carrito
+    const updatedCart = cart.map((item) => {
+      if (item.id === productId) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+
+    setCart(updatedCart);
+  };
+
   // Agregar un producto al carrito
   const addToCart = (product, quantity) => {
     const productInCart = cart.find((item) => item.id === product.id);
@@ -85,7 +97,14 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart, updateCartItem }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        updateCartItem,
+        updateQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>

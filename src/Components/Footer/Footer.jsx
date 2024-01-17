@@ -4,7 +4,7 @@ import style from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className="container-fluid">
-      <section className="col-3">
+      <section className="col-12 col-lg-3">
         <figure>
           <img src="/img/logo.png" alt="logo de la marca" />
           <figcaption>Protect Group</figcaption>
@@ -47,7 +47,6 @@ export default function Footer() {
           </svg>
         </Link>
       </section>
-      <p>@ 2024 Portec Group</p>
     </footer>
   );
 }

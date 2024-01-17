@@ -1,29 +1,55 @@
 .itemCarrito {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 10px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0px;
 }
 
 .itemCarrito img {
-    width: 40%;
+  width: 40%;
 }
 
 .itemCarrito section {
-    margin-left: 15px;
-    width: 100%;
+  margin-left: 15px;
+  width: 100%;
 }
 
 .itemCarrito section h3 {
-    width: 100%;
-    font-size: 1.5em;
+  width: 100%;
+  font-size: 1.5em;
 }
 
 .itemCarrito section div {
-    display: flex;
-    flex-direction: row;
-    align-items: first baseline;
+  display: flex;
+  flex-direction: row;
+  align-items: first baseline;
 }
 
 .itemCarrito section div p {
-    margin-right: 20px;
+  margin-right: 20px;
+}
+
+.input_cart {
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input_cart input {
+  width: 60px;
+  height: 35px;
+}
+
+.input_cart button {
+  height: 35px;
+  width: 40px;
+  background-color: #1c51e4;
+  color: white;
+  border-style: none;
+  border-radius: 3px;
+}
+
+.input_cart button:hover {
+  background-color: #1c51e4c2;
 }

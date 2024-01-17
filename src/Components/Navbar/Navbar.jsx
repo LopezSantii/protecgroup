@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg px-5">
+    <nav className="bg-white navbar navbar-expand-lg px-5">
       <section className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src="/img/logo.png" alt="Logo de protecgroup" />
@@ -25,15 +25,15 @@ export default function Navbar() {
           id="offcanvasDarkNavbar"
           aria-labelledby="offcanvasDarkNavbarLabel"
         >
-          <div className="offcanvas-header">
+          <div className="offcanvas-header bg-white">
             <button
               type="button"
-              className="btn-close btn-close-white"
+              className="btn-close"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
             ></button>
           </div>
-          <div className="offcanvas-body">
+          <div className="offcanvas-body bg-white">
             <ul id="nav" className="navbar-nav ms-auto mx-auto  mb-lg-0">
               <li className="nav-item">
                 <NavLink

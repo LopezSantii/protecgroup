@@ -10,6 +10,23 @@ export default function ItemDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [inputValue, setInputValue] = useState(1);
+
+  const handleInputChange = (e) => {
+    const inputValue = parseInt(e.target.value, 10);
+
+    if (!isNaN(inputValue)) {
+      setInputValue(inputValue);
+    }
+  };
+
+  const suma = () => {
+    setInputValue((prevValue) => prevValue + 1);
+  };
+
+  const resta = () => {
+    setInputValue((prevValue) => (prevValue > 1 ? prevValue - 1 : 1));
+  };
 
   useEffect(() => {
     const db = getFirestore();
@@ -29,7 +46,7 @@ export default function ItemDetail() {
   }, []);
 
   return (
-    <section className="mb-5 container">
+    <section className="mt-5 mb-5 container">
       {loading ? (
         // Mostrar placeholders si loading es true
         <div className="row placeholder-glow">
@@ -67,7 +84,7 @@ export default function ItemDetail() {
         </div>
       ) : (
         // Mostrar contenido real si loading es false
-        <div className="row">
+        <div className="itemDetail row">
           <div
             id="carouselExample"
             className="col-xxl-5 col-xl-5 col-12 h-100 d-block carousel slide carousel-dark"
@@ -129,6 +146,38 @@ export default function ItemDetail() {
           >
             <h1>{product.title}</h1>
             <p className="m-3">{product.description}</p>
+            <section
+              className="accordion accordion-flush d-block d-lg-none"
+              id="accordionFlushExample"
+            >
+              <div className="accordion-item">
+                <h2 className="accordion-header">
+                  <button
+                    className="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Caracteristicas
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  className="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <ul className="accordion-body">
+                    {product.caracteristicas.map((item, index) => (
+                      <li className="mb-1" key={index}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
             <h3 className="d-none d-lg-block">Caracteristicas</h3>
             <ul className="d-none d-lg-block">
               {product.caracteristicas.map((item, index) => (
@@ -152,11 +201,45 @@ export default function ItemDetail() {
                 style={{ height: "20px", width: "70%" }}
               ></div>
             </div>
-            <Button
-              clase="m-3"
-              funcion={() => addToCart(product, 1)}
-              content="Agregar al carrito"
-            />
+            <section className="row mt-3 ">
+              <Button
+                clase="col-4"
+                funcion={() => addToCart(product, inputValue)}
+                content="Agregar al carrito"
+              />
+              <div className="input col-4">
+                <button onClick={resta}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-dash"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                  </svg>
+                </button>
+                <input
+                  className="text-center"
+                  type="text"
+                  value={inputValue}
+                  onChange={handleInputChange}
+                />
+                <button onClick={suma}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                  </svg>
+                </button>
+              </div>
+            </section>
           </section>
         </div>
       )}
