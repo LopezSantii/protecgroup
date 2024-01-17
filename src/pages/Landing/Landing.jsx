@@ -53,7 +53,7 @@ export default function Landing() {
               <img
                 className="mx-auto"
                 style={{ width: "150px" }}
-                src="/img/Logo_dana.png"
+                src="/img/logo_dana.png"
                 alt="logo dana seguridad industrial"
               />
             </div>
