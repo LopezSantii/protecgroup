@@ -145,12 +145,13 @@ export default function ItemDetail() {
             className={`col-xxl-6 col-xl-5 col-12 ${style.description_item}`}
           >
             <h1>{product.title}</h1>
+            <p>{product.marca}</p>
             <p className="m-3">{product.description}</p>
             <section
-              className="accordion accordion-flush d-block d-lg-none"
+              className=" accordion accordion-flush d-block d-lg-none"
               id="accordionFlushExample"
             >
-              <div className="accordion-item">
+              <div className="acordion accordion-item">
                 <h2 className="accordion-header">
                   <button
                     className="accordion-button collapsed"
@@ -186,28 +187,13 @@ export default function ItemDetail() {
                 </li>
               ))}
             </ul>
-            {/* Placeholder para características en dispositivos pequeños */}
-            <div className="d-block d-lg-none">
-              <div
-                className="mb-1 bg-light"
-                style={{ height: "20px", width: "80%" }}
-              ></div>
-              <div
-                className="mb-1 bg-light"
-                style={{ height: "20px", width: "60%" }}
-              ></div>
-              <div
-                className="mb-1 bg-light"
-                style={{ height: "20px", width: "70%" }}
-              ></div>
-            </div>
-            <section className="row mt-3 ">
+            <section className="row mt-3">
               <Button
-                clase="col-4"
+                clase="col-12 col-md-4"
                 funcion={() => addToCart(product, inputValue)}
                 content="Agregar al carrito"
               />
-              <div className="input col-4">
+              <div className="input p-0 mx-auto mt-2 mt-md-0 col-12 col-md-4">
                 <button onClick={resta}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -25,36 +25,74 @@ export default function Landing() {
       </header>
       <section className="container-fluid section_marcas">
         <h2 className="text-center">MARCAS CON LAS QUE TRABAJAMOS</h2>
-        <div>
-          <section className="row col-12">
+        <div className="container">
+          <section className="row">
             <div className="col-6 col-lg-3  d-flex justify-content-center align-items-center">
               <img
-                className="mx-auto"
-                style={{ width: "200px" }}
+                className="img-fluid"
+                style={{ width: "180px" }}
                 src="/img/logo_libus.png"
                 alt="logo libus"
               />
             </div>
             <div className="col-6 col-lg-3 d-flex justify-content-center align-items-center">
               <img
-                className="mx-auto"
+                className="img-fluid"
                 src="/img/ombu_logo.png"
                 alt="logo ombu"
               />
             </div>
-            <div className="col-6 col-lg-3  d-flex justify-content-center align-items-center">
+            <div className="col-6 col-lg-3  mt-5 d-flex justify-content-center align-items-center">
+              <img className="img-fluid" src="/img/logo_3m.png" alt="logo 3m" />
+            </div>
+            <div className="col-6 col-lg-3  mt-5 d-flex justify-content-center align-items-center">
               <img
-                className="mx-auto"
-                src="/img/LOGO_MG.png"
-                alt="logo mg solutions"
+                className="img-fluid"
+                style={{ width: "200px" }}
+                src="/img/logo_fravida.png"
+                alt="logofravida"
               />
             </div>
-            <div className="col-6 col-lg-3  d-flex justify-content-center align-items-center">
+            <div className="col-6 col-lg-3  mt-5 d-flex justify-content-center align-items-center">
               <img
-                className="mx-auto"
-                style={{ width: "150px" }}
-                src="/img/logo_dana.png"
-                alt="logo dana seguridad industrial"
+                className="img-fluid imgLogo"
+                src="/img/logo_funcional.png"
+                alt="logo funcional"
+              />
+            </div>
+            <div className="col-6 col-lg-3  mt-5 d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid imgLogo"
+                src="/img/logo_grafa70.png"
+                alt="logo grafa 70"
+              />
+            </div>
+            <div className="col-6 col-lg-3  mt-5 d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid imgLogo"
+                src="/img/logo_nomex.png"
+                alt="logo nomex"
+              />
+            </div>
+            <div className="col-6 col-lg-3  mt-5 d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid imgLogo"
+                src="/img/logo_proforce.webp"
+                alt="logo proforce"
+              />
+            </div>
+            <div className="col-6 col-lg-6  mt-5 d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid imgLogo2"
+                src="/img/logo_roguant.png"
+                alt="logo roguant"
+              />
+            </div>
+            <div className="col-6 col-lg-6 mt-5 d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid imgLogo2"
+                src="/img/logo_steelpro.jpg"
+                alt="logo steelpro"
               />
             </div>
           </section>

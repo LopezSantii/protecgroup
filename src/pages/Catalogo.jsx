@@ -59,30 +59,22 @@ export default function Catalogo() {
       <section className="container">
         {loading ? (
           // Mostrar placeholders si loading es true
-          <>
+          <section className="row">
             {[1, 2, 3, 4, 5, 6].map((placeholder) => (
-              <div className="col-4 placeholder-glow" key={placeholder}>
+              <div
+                className="my-2 col-lg-4 col-6 placeholder-glow"
+                key={placeholder}
+              >
                 {/* Placeholder para ItemCard */}
-                <div
-                  className="mb-3 placeholder bg-secondary"
-                  style={{ height: "400px", width: "400px" }}
-                ></div>
-                <div
-                  className="col-3 mb-3 placeholder bg-secondary"
-                  style={{ height: "20px", width: "300px" }}
-                ></div>
-                <div
-                  className="col-3 mb-3 placeholder bg-secondary"
-                  style={{ height: "30px", width: "400px" }}
-                ></div>
+                <div className="placeHolder mb-3 placeholder bg-secondary"></div>
               </div>
             ))}
-          </>
+          </section>
         ) : (
           // Mostrar contenido real si loading es false
           <section className="row">
             {products.map((product) => (
-              <div key={product.id} className=" my-2 col-lg-4 col-md-6">
+              <div key={product.id} className="my-2 col-lg-4 col-6">
                 <ItemCard addToCart={addToCart} product={product} />
               </div>
             ))}

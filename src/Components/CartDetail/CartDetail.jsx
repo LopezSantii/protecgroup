@@ -26,10 +26,10 @@ function CartDetail() {
     // Verifica si el usuario está en un dispositivo móvil
     if (isMobile) {
       // Si es móvil, abre la aplicación de WhatsApp
-      whatsappURL = `whatsapp://send?phone=1123895213&text=${mensajeEncoded}`;
+      whatsappURL = `whatsapp://send?phone=1136598411&text=${mensajeEncoded}`;
     } else {
       // Si es una PC, abre WhatsApp Web en una nueva ventana o pestaña
-      whatsappURL = `https://web.whatsapp.com/send?phone=1123895213&text=${mensajeEncoded}`;
+      whatsappURL = `https://web.whatsapp.com/send?phone=1136598411&text=${mensajeEncoded}`;
     }
 
     window.open(whatsappURL, "_blank");

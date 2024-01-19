@@ -1,8 +1,8 @@
 footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30vh;
+  justify-content: left;
+  align-items: flex-start;
+  height: auto;
   background-color: #1842b8;
 }
 
@@ -12,7 +12,7 @@ footer p {
 }
 
 footer section {
-  margin: 0px 25px;
+  margin: 80px 50px;
 }
 
 footer section a {
@@ -23,7 +23,6 @@ footer section a {
 footer section figure {
   display: flex;
   align-items: center;
-  width: 500px;
   color: white;
 }
 
@@ -32,6 +31,7 @@ footer section figure img {
 }
 
 footer section figure figcaption {
+  width: 100%;
   margin-left: 20px;
   font-size: 2em;
   font-weight: 600;
@@ -39,4 +39,24 @@ footer section figure figcaption {
 
 footer section a svg {
   color: white;
+}
+
+footer section a svg:hover {
+  color: #59cbff;
+}
+
+.links {
+  height: 100%;
+  margin-top: 110px;
+  color: white;
+}
+
+.links a:hover {
+  color: #59cbff;
+}
+
+@media (max-width: 1200px) {
+  .links {
+    margin-top: 0px;
+  }
 }

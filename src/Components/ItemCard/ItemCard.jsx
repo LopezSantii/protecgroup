@@ -13,11 +13,11 @@ export default function ItemCard({ product, addToCart }) {
       </Link>
       <div
         style={{
-          height: "50px",
+          height: "7vh",
         }}
-        className="card-body mt-3"
+        className="card-body my-3"
       >
-        <p className="card-title">{product.title}</p>
+        <p className="titleCard card-title">{product.title}</p>
       </div>
       <Button
         clase={`w-100 mt-2`}

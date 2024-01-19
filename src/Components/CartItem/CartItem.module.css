@@ -1,4 +1,6 @@
 .itemCarrito {
+  padding: 2vh 1vw;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin: 10px 0px;
@@ -6,6 +8,7 @@
 
 .itemCarrito img {
   width: 40%;
+  height: 40%;
 }
 
 .itemCarrito section {
@@ -15,7 +18,7 @@
 
 .itemCarrito section h3 {
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .itemCarrito section div {
@@ -52,4 +55,25 @@
 
 .input_cart button:hover {
   background-color: #1c51e4c2;
+}
+
+@media (max-width: 400px) {
+  .input_cart input {
+    width: 10vw;
+    height: 8vw;
+  }
+
+  .input_cart button {
+    width: 10vw;
+    height: 8vw;
+    background-color: #1c51e4;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+  }
+
+  .itemCarrito section h3 {
+    width: 100%;
+    font-size: 0.8em;
+  }
 }

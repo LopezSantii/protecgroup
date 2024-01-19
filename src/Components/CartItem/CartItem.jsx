@@ -33,13 +33,13 @@ export default function CartItem({ products, removeFromCart }) {
   };
 
   return (
-    <section className={style.itemCarrito}>
+    <section className={`${style.itemCarrito}`}>
       <img
         className="img-fluid"
         src={products.img.imgCard}
         alt={products.title}
       />
-      <section className="container">
+      <section>
         <h3 className="col-12">{products.title}</h3>
         <div>
           <div className={`${style.input_cart}`}>
