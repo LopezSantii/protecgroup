@@ -34,6 +34,18 @@ export default function Catalogo() {
     if (id === "respiratoria") {
       setTitle("Proteccion Respiratoria");
     }
+    if (id === "guantes") {
+      setTitle("Guantes");
+    }
+    if (id === "indumentaria") {
+      setTitle("Indumentaria de Trabajo");
+    }
+    if (id === "vial") {
+      setTitle("Seguridad Vial");
+    }
+    if (id === "otros") {
+      setTitle("Otros Productos");
+    }
 
     getDocs(itemCollection)
       .then((snapshot) => {

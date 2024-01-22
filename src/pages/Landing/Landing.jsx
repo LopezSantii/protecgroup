@@ -81,18 +81,32 @@ export default function Landing() {
                 alt="logo proforce"
               />
             </div>
-            <div className="col-6 col-lg-6  mt-5 d-flex justify-content-center align-items-center">
+            <div className="col-6 col-lg-3  mt-5 d-flex justify-content-center align-items-center">
               <img
                 className="img-fluid imgLogo2"
                 src="/img/logo_roguant.png"
                 alt="logo roguant"
               />
             </div>
-            <div className="col-6 col-lg-6 mt-5 d-flex justify-content-center align-items-center">
+            <div className="col-6 col-lg-3 mt-5 d-flex justify-content-center align-items-center">
               <img
                 className="img-fluid imgLogo2"
                 src="/img/logo_steelpro.jpg"
                 alt="logo steelpro"
+              />
+            </div>
+            <div className="col-6 col-lg-3 mt-5 d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid"
+                src="/img/logo_ansell.jpg"
+                alt="logo ansell"
+              />
+            </div>
+            <div className="col-6 col-lg-3 mt-5 d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid"
+                src="/img/logo_work_safe.webp"
+                alt="logo work safe"
               />
             </div>
           </section>

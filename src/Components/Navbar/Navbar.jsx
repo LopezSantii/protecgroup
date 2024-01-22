@@ -65,6 +65,26 @@ export default function Navbar() {
                   Respiratoria
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/category/vial">
+                  Vial
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/category/guantes">
+                  Guantes
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/category/indumentaria">
+                  Indumentaria
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/category/otros">
+                  Otros
+                </NavLink>
+              </li>
             </ul>
             <CartWidget />
           </div>

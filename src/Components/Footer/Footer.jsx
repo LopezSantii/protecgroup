@@ -80,6 +80,18 @@ export default function Footer() {
         <Link className="nav-link" to="/category/respiratoria">
           Respiratoria
         </Link>
+        <Link className="nav-link" to="/category/vial">
+          Vial
+        </Link>
+        <Link className="nav-link" to="/category/guantes">
+          Guantes
+        </Link>
+        <Link className="nav-link" to="/category/indumentaria">
+          Indumentaria
+        </Link>
+        <Link className="nav-link" to="/category/otros">
+          Otros
+        </Link>
       </section>
     </footer>
   );
