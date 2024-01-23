@@ -46,6 +46,9 @@ export default function Catalogo() {
     if (id === "otros") {
       setTitle("Otros Productos");
     }
+    if (id === "soldadura") {
+      setTitle("Proteccion para Soldadura");
+    }
 
     getDocs(itemCollection)
       .then((snapshot) => {
@@ -57,7 +60,11 @@ export default function Catalogo() {
         setProducts(
           id === undefined || id == "Todos"
             ? itemsFromSnapshot
-            : itemsFromSnapshot.filter((product) => product.category === id)
+            : itemsFromSnapshot.filter(
+                (product) =>
+                  product.category === id ||
+                  (product.categories && product.categories.includes(id))
+              )
         );
       })
       .finally(() => {

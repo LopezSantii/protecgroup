@@ -3,7 +3,7 @@ footer {
   justify-content: left;
   align-items: flex-start;
   height: auto;
-  background-color: #1842b8;
+  background-color: #1e68c9;
 }
 
 footer p {
@@ -11,16 +11,13 @@ footer p {
   color: white;
 }
 
-footer section {
-  margin: 80px 50px;
-}
-
 footer section a {
-  text-decoration: none;
   margin: 10px;
 }
 
 footer section figure {
+  margin-top: 110px;
+  padding: 0px 20px;
   display: flex;
   align-items: center;
   color: white;
@@ -37,11 +34,15 @@ footer section figure figcaption {
   font-weight: 600;
 }
 
-footer section a svg {
+footer section a {
+  padding: 0px 27px;
+}
+
+footer section a {
   color: white;
 }
 
-footer section a svg:hover {
+footer section a:hover {
   color: #59cbff;
 }
 
@@ -51,12 +52,34 @@ footer section a svg:hover {
   color: white;
 }
 
+.links a {
+  display: flexbox;
+  width: 100px;
+}
+
 .links a:hover {
   color: #59cbff;
 }
 
+.contacto {
+  height: 100%;
+  margin-top: 110px;
+  color: white;
+}
+.contactIcons {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 1200px) {
+  footer section a {
+    margin: 0px;
+  }
   .links {
-    margin-top: 0px;
+    margin-top: 20px;
+  }
+
+  .contacto {
+    margin-top: 20px;
   }
 }

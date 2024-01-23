@@ -66,6 +66,11 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/category/soldadura">
+                  Soldadura
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/category/vial">
                   Vial
                 </NavLink>
